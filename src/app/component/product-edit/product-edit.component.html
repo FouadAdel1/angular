@@ -1,0 +1,51 @@
+<div class="container mt-5">
+<form action="" (ngSubmit)="onSubmit()" [formGroup]="eidtFrom">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Product Name</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="productName"
+        formControlName="productName"
+      />
+            <div class="text-danger" *ngIf="name.hasError('required')&& name.touched">
+        name is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Product Price</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="Price"
+        formControlName="price"
+      />
+            <div class="text-danger" *ngIf="price.hasError('required')&& price.touched">
+        price is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Product quantity</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="quantity"
+        formControlName="quantity"
+      />
+            <div class="text-danger" *ngIf="quantity.hasError('required')&& quantity.touched">
+        quntity is required.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"   [disabled]="!eidtFrom.valid" >Edit</button>
+</form>
+
+
+</div>
